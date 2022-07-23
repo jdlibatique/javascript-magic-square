@@ -4,7 +4,20 @@ let magicSquare = [];
 const magicSquareForm = document.querySelector("#magic-square-width");
 magicSquareForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
+    
+    
+    if (magicSquareForm.width.value % 2 === 0) {
+        alert("Please enter an odd number");
+        return;
+    } else if (magicSquareForm.width.value === '1') {
+        alert("Please enter an odd number greater than 1")
+        return;
+    }
+    
+    while (magicSquare.length) magicSquare.pop();
     squareSize = magicSquareForm.width.value;
+    let magicConstant = squareSize * (((squareSize ** 2) + 1) / 2);
+    console.log(magicConstant);
     
     for (let i = 0; i < squareSize; i++) {
         magicSquare[i] = [];
@@ -17,6 +30,8 @@ magicSquareForm.addEventListener('submit', (evt) => {
     createGrid(squareSize);
     console.log(Math.floor(magicSquare.length / 2))
     computeSquare(parseInt(squareSize));
+    magicSquareForm.reset();
+    magicSquareForm.width.placeholder = `Magic Constant = ${magicConstant}`
 });
 
 const createGrid = (squareSize) => {

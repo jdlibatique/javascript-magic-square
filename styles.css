@@ -47,11 +47,13 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 .grid-container button {
+  font-size: 5vh;
   width: 10vh;
   height: 10vh;
   border: none;
   border-radius: 0.5vh;
   background-color: #d7b5ff;
+  color: #32305e;
 }
 
 /*# sourceMappingURL=styles.css.map */

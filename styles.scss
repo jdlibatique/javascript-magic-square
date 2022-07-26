@@ -49,10 +49,12 @@ body {
 	gap: 1vh;
 	grid-template-columns: repeat(3, 1fr);
 	button {
+		font-size: 5vh;
 		width: 10vh;
 		height: 10vh;
 		border: none;
 		border-radius: 0.5vh;
 		background-color: #d7b5ff;
+		color: #32305e;
 	}
 }

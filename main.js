@@ -56,10 +56,22 @@ const computeSquare = (squareSize) => {
     let initialPosition = Math.floor(magicSquare.length / 2);
     let x = initialPosition, y = 0, previousX, previousY;
     
+    // const delayedPrinting = (x, y, currentNumber) => {
+    //     document.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = currentNumber;
+    // }
+    
     
     while (currentNumber <= squareSize * squareSize) {
         magicSquare[y][x] = currentNumber;
-        document.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = currentNumber;
+        // setTimeout(() => {
+        //     console.log(x, y, currentNumber)
+        document.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = currentNumber.toString();
+        // }, 1000)
+        // document.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = currentNumber.toString();
+        // setTimeout((x, y, currentNumber) => {
+        //     document.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = currentNumber;
+        // }, 1000);
+        // setTimeout((x, y, currentNumber) => {delayedPrinting(x, y, currentNumber)}, 1000)
         currentNumber++;
         previousX = x;
         previousY = y
